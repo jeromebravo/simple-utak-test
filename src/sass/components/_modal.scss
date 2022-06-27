@@ -1,0 +1,55 @@
+@use '../abstracts/colors';
+
+.modal {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(colors.$black, .2);
+  width: 100vw;
+  height: 100vh;
+
+  &--visible {
+    display: block;
+  }
+
+  &__content {
+    background-color: colors.$white;
+    border-radius: 15px;
+    overflow: auto;
+    padding: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 420px) {
+      border-radius: 0;
+      height: 100vh !important;
+      width: 100vw !important;
+    }
+    
+    &--sm {
+      width: 40rem;
+    }
+
+    &--lg {
+      height: 50rem;
+      width: 60rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__close {
+    cursor: pointer;
+    font-size: 3rem;
+    margin-right: 1.5rem;
+  }
+
+  &__body {
+    margin-top: 2.5rem;
+  }
+}

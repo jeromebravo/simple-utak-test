@@ -1,0 +1,49 @@
+@use '../abstracts/colors';
+
+.form {
+
+  & > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &__group:focus-within &__label {
+    color: colors.$primary;
+  }
+
+  &__group:focus-within &__input, 
+  &__group:focus-within &__select {
+    border: 1px solid colors.$primary;
+  }
+
+  &__input, &__select {
+    border: 1px solid colors.$black;
+    border-radius: 5px;
+    font-family: inherit;
+    outline: none;
+    padding: 1rem;
+    transition: all .3s;
+    width: 100%;
+  }
+
+  &__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+    transition: all .3s;
+
+    &-icon {
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    &-star {
+      color: colors.$red;
+      margin-left: .5rem;
+    }
+  }
+}
