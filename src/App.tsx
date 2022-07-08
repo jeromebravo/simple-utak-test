@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [showEditItem, setShowEditItem] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-  console.log('Test');
+
   const handleEdit = (item: Item) => {
     setSelectedItem(item);
     setShowEditItem(true);
